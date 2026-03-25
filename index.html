@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Developer | Portfolio</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Własne style (Animacje, pasek przewijania, stroke-text) -->
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            animation: marquee 20s linear infinite;
+            display: flex;
+        }
+        .stroke-text {
+            -webkit-text-stroke: 2px #EAEAEA;
+            color: transparent;
+        }
+        /* Subtelny scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #050505;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ccff00;
+        }
+    </style>
+</head>
+<body class="bg-[#050505] text-[#EAEAEA] font-sans selection:bg-[#ccff00] selection:text-black overflow-x-hidden relative cursor-default">
+
+    <!-- Custom Designer Cursor (widoczny tylko na desktopie) -->
+    <div id="cursor-outline" class="hidden md:block fixed top-0 left-0 w-8 h-8 rounded-full border border-[#ccff00] pointer-events-none z-[100] mix-blend-difference transition-transform duration-75 ease-out"></div>
+    <div id="cursor-dot" class="hidden md:block fixed top-0 left-0 w-2 h-2 bg-[#ccff00] rounded-full pointer-events-none z-[100] transition-transform duration-0"></div>
+
+    <!-- Nawigacja -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-8">
+        <div class="container mx-auto px-6 md:px-12 flex justify-between items-center">
+            <div class="text-xl md:text-2xl font-black tracking-tighter uppercase flex items-center gap-2">
+                <div class="w-4 h-4 bg-[#ccff00] rounded-sm animate-pulse"></div>
+                Studio.
+            </div>
+
+            <div class="hidden md:flex space-x-12 text-sm font-bold tracking-widest uppercase">
+                <a href="#uslugi" class="hover:text-[#ccff00] transition-colors">Usługi</a>
+                <a href="#podejscie" class="hover:text-[#ccff00] transition-colors">Podejście</a>
+                <a href="#kontakt" class="hover:text-[#ccff00] transition-colors">Kontakt</a>
+            </div>
+
+            <button id="mobile-menu-btn" class="md:hidden text-white hover:text-[#ccff00] transition-colors">
+                <i data-lucide="menu" id="menu-icon" class="w-8 h-8"></i>
+            </button>
+        </div>
+
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-[#050505] h-screen flex-col items-center justify-center space-y-8 pb-32 z-40">
+            <a href="#uslugi" class="mobile-link text-4xl font-black uppercase hover:text-[#ccff00]">Usługi</a>
+            <a href="#podejscie" class="mobile-link text-4xl font-black uppercase hover:text-[#ccff00]">Podejście</a>
+            <a href="#kontakt" class="mobile-link text-4xl font-black uppercase text-[#ccff00]">Porozmawiajmy</a>
+        </div>
+    </nav>
+
+    <main class="relative z-10">
+
+        <!-- Sekcja Hero - Brutalistyczna Typografia -->
+        <section class="pt-40 pb-20 md:pt-60 md:pb-40 container mx-auto px-6 md:px-12">
+            <p class="text-[#ccff00] font-mono text-sm md:text-base mb-8 uppercase tracking-widest flex items-center gap-4">
+                <span class="w-12 h-px bg-[#ccff00]"></span>
+                Design & Technologia dla Biznesu
+            </p>
+
+            <h1 class="text-[14vw] md:text-[9vw] leading-[0.85] font-black uppercase tracking-tighter mb-12 flex flex-col">
+                <span class="hover:text-[#ccff00] transition-colors duration-500 cursor-default">Creative</span>
+                <span class="text-transparent stroke-text ml-0 md:ml-[10vw] hover:text-[#ccff00] transition-colors duration-500 cursor-default">
+                    Developer.
+                </span>
+            </h1>
+
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-12 mt-8">
+                <p class="text-xl md:text-3xl max-w-2xl font-light leading-snug">
+                    Pomagam firmom rosnąć w internecie. <br/>
+                    <span class="font-bold">Tworzę strony, które przyciągają klientów, i systemy, które oszczędzają Twój czas.</span>
+                </p>
+                <a href="#kontakt" class="group flex items-center gap-4 text-lg font-bold uppercase tracking-widest hover:text-[#ccff00] transition-colors cursor-pointer">
+                    Rozpocznij projekt
+                    <div class="w-12 h-12 rounded-full border-2 border-current flex items-center justify-center group-hover:bg-[#ccff00] group-hover:text-black transition-all group-hover:scale-110">
+                        <i data-lucide="arrow-up-right" class="w-6 h-6"></i>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Marquee - Pasek Przesuwający Się -->
+        <div class="w-full bg-[#ccff00] text-black py-4 md:py-6 overflow-hidden flex whitespace-nowrap border-y border-black">
+            <div class="animate-marquee text-3xl md:text-5xl font-black uppercase tracking-widest">
+                STRONY WWW • SKLEPY INTERNETOWE • SYSTEMY DLA FIRM • AUTOMATYZACJA PRACY • WIZERUNEK MARKI •
+                STRONY WWW • SKLEPY INTERNETOWE • SYSTEMY DLA FIRM • AUTOMATYZACJA PRACY • WIZERUNEK MARKI •
+            </div>
+        </div>
+
+        <!-- Sekcja Usługi - Interaktywne Wiersze -->
+        <section id="uslugi" class="py-32 container mx-auto px-6 md:px-12">
+            <h2 class="text-4xl md:text-6xl font-black uppercase mb-16 tracking-tighter">
+                Co <span class="text-[#ccff00]">tworzę?</span>
+            </h2>
+
+            <div class="border-t-2 border-white/10">
+                <!-- Usługa 1 -->
+                <div class="group border-b-2 border-white/10 py-12 md:py-20 flex flex-col md:flex-row md:items-center justify-between gap-8 hover:bg-[#ccff00] transition-colors duration-500 md:px-8 -mx-6 px-6 md:mx-0 cursor-pointer">
+                    <div class="flex items-start gap-4 md:gap-8 md:w-2/3">
+                        <span class="text-xl md:text-4xl font-mono text-white/30 group-hover:text-black/50 transition-colors pt-2">01</span>
+                        <h3 class="text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter group-hover:text-black transition-colors leading-none">
+                            Dedykowane Systemy
+                        </h3>
+                    </div>
+                    <div class="md:w-1/3 flex flex-col md:items-end text-left md:text-right ml-10 md:ml-0">
+                        <p class="text-lg md:text-xl text-gray-400 group-hover:text-black/80 font-medium leading-relaxed max-w-sm">
+                            Tworzę od zera zaawansowane oprogramowanie pod unikalne wymagania Twojej firmy. Panele zarządzania, śledzenie targetów, rozbudowane CRM-y i pełna kontrola nad efektywnością pracowników.
+                        </p>
+                        <i data-lucide="arrow-right" class="hidden md:block mt-8 w-12 h-12 text-transparent group-hover:text-black transition-all -translate-x-10 group-hover:translate-x-0 opacity-0 group-hover:opacity-100"></i>
+                    </div>
+                </div>
+
+                <!-- Usługa 2 -->
+                <div class="group border-b-2 border-white/10 py-12 md:py-20 flex flex-col md:flex-row md:items-center justify-between gap-8 hover:bg-[#ccff00] transition-colors duration-500 md:px-8 -mx-6 px-6 md:mx-0 cursor-pointer">
+                    <div class="flex items-start gap-4 md:gap-8 md:w-2/3">
+                        <span class="text-xl md:text-4xl font-mono text-white/30 group-hover:text-black/50 transition-colors pt-2">02</span>
+                        <h3 class="text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter group-hover:text-black transition-colors leading-none">
+                            Sklepy Internetowe
+                        </h3>
+                    </div>
+                    <div class="md:w-1/3 flex flex-col md:items-end text-left md:text-right ml-10 md:ml-0">
+                        <p class="text-lg md:text-xl text-gray-400 group-hover:text-black/80 font-medium leading-relaxed max-w-sm">
+                            Tworzę sklepy, które po prostu sprzedają. Łatwe w obsłudze dla Ciebie i intuicyjne dla Twoich klientów. Od pomysłu po pierwszą sprzedaż.
+                        </p>
+                        <i data-lucide="arrow-right" class="hidden md:block mt-8 w-12 h-12 text-transparent group-hover:text-black transition-all -translate-x-10 group-hover:translate-x-0 opacity-0 group-hover:opacity-100"></i>
+                    </div>
+                </div>
+
+                <!-- Usługa 3 -->
+                <div class="group border-b-2 border-white/10 py-12 md:py-20 flex flex-col md:flex-row md:items-center justify-between gap-8 hover:bg-[#ccff00] transition-colors duration-500 md:px-8 -mx-6 px-6 md:mx-0 cursor-pointer">
+                    <div class="flex items-start gap-4 md:gap-8 md:w-2/3">
+                        <span class="text-xl md:text-4xl font-mono text-white/30 group-hover:text-black/50 transition-colors pt-2">03</span>
+                        <h3 class="text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter group-hover:text-black transition-colors leading-none">
+                            Strony Wizytówkowe
+                        </h3>
+                    </div>
+                    <div class="md:w-1/3 flex flex-col md:items-end text-left md:text-right ml-10 md:ml-0">
+                        <p class="text-lg md:text-xl text-gray-400 group-hover:text-black/80 font-medium leading-relaxed max-w-sm">
+                            Zbuduj zaufanie i wyróżnij się na tle konkurencji. Projektuję nowoczesne strony, które robią efekt WOW i zachęcają do kontaktu.
+                        </p>
+                        <i data-lucide="arrow-right" class="hidden md:block mt-8 w-12 h-12 text-transparent group-hover:text-black transition-all -translate-x-10 group-hover:translate-x-0 opacity-0 group-hover:opacity-100"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sekcja Dlaczego Ja (Brutalist Grid) -->
+        <section id="podejscie" class="py-32 bg-white text-black">
+            <div class="container mx-auto px-6 md:px-12">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+                    <div>
+                        <h2 class="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-none mb-8">
+                            Pełna kontrola <br/> nad firmą.
+                        </h2>
+                        <p class="text-xl md:text-2xl font-medium leading-relaxed max-w-xl text-gray-700">
+                            Gotowe programy zmuszają Cię do dostosowania się do nich. Ja tworzę systemy, które dostosowują się do Ciebie. Od skomplikowanych paneli administracyjnych, po precyzyjne śledzenie targetów i pełny monitoring działań w firmie.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                        <div class="bg-[#f0f0f0] p-8 md:p-12 hover:scale-[1.02] transition-transform">
+                            <i data-lucide="database" class="w-12 h-12 mb-8 text-[#050505]"></i>
+                            <h4 class="text-2xl font-black uppercase mb-4">Władza i Dane</h4>
+                            <p class="font-medium text-gray-600">Rozbudowane uprawnienia, raportowanie wyników, ścisła kontrola pracowników i przypisywanie zadań. Ty ustalasz zasady, system je egzekwuje.</p>
+                        </div>
+                        <div class="bg-[#ccff00] p-8 md:p-12 hover:scale-[1.02] transition-transform shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] border-2 border-black">
+                            <i data-lucide="layout" class="w-12 h-12 mb-8 text-[#050505]"></i>
+                            <h4 class="text-2xl font-black uppercase mb-4">Wizerunek i Zyski</h4>
+                            <p class="font-medium text-gray-800">Twoja strona będzie nie tylko nowoczesna, ale przede wszystkim ułożona tak, aby każdy odwiedzający chciał u Ciebie kupić.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Huge Footer / Contact Form -->
+        <section id="kontakt" class="pt-40 pb-20 container mx-auto px-6 md:px-12 min-h-[70vh] flex flex-col justify-center">
+            <div class="text-center mb-16">
+                <p class="text-xl md:text-2xl font-mono text-[#ccff00] mb-4 uppercase tracking-widest">Masz pomysł na projekt?</p>
+                <h2 class="text-[10vw] md:text-[8vw] font-black uppercase tracking-tighter leading-none stroke-text">
+                    Let's Talk
+                </h2>
+            </div>
+
+            <!-- Designerski Formularz -->
+            <form class="max-w-4xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                <div class="flex flex-col gap-2 group">
+                    <label class="font-mono text-sm uppercase tracking-widest text-gray-500 group-focus-within:text-[#ccff00] transition-colors">Jak się nazywasz?</label>
+                    <input type="text" placeholder="Jan Kowalski" class="bg-transparent border-b-2 border-white/20 py-4 text-xl md:text-2xl text-white placeholder-gray-700 focus:outline-none focus:border-[#ccff00] transition-colors rounded-none w-full">
+                </div>
+
+                <div class="flex flex-col gap-2 group">
+                    <label class="font-mono text-sm uppercase tracking-widest text-gray-500 group-focus-within:text-[#ccff00] transition-colors">Twój E-mail</label>
+                    <input type="email" placeholder="jan@firma.pl" class="bg-transparent border-b-2 border-white/20 py-4 text-xl md:text-2xl text-white placeholder-gray-700 focus:outline-none focus:border-[#ccff00] transition-colors rounded-none w-full">
+                </div>
+
+                <div class="flex flex-col gap-2 md:col-span-2 group relative">
+                    <label class="font-mono text-sm uppercase tracking-widest text-gray-500 group-focus-within:text-[#ccff00] transition-colors">Czego potrzebujesz?</label>
+                    <select class="bg-[#050505] border-b-2 border-white/20 py-4 text-xl md:text-2xl text-white focus:outline-none focus:border-[#ccff00] transition-colors rounded-none cursor-pointer appearance-none w-full">
+                        <option value="system" class="bg-[#050505] text-lg">Dedykowany System / Panel Zarządzania</option>
+                        <option value="ecommerce" class="bg-[#050505] text-lg">Sklep Internetowy (E-commerce)</option>
+                        <option value="website" class="bg-[#050505] text-lg">Designerska Strona WWW</option>
+                        <option value="other" class="bg-[#050505] text-lg">Inne wsparcie technologiczne</option>
+                    </select>
+                    <!-- Strzałka do selecta -->
+                    <div class="absolute right-0 bottom-6 pointer-events-none text-white group-focus-within:text-[#ccff00] transition-colors">
+                        <i data-lucide="chevron-down" class="w-6 h-6"></i>
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-2 md:col-span-2 group">
+                    <label class="font-mono text-sm uppercase tracking-widest text-gray-500 group-focus-within:text-[#ccff00] transition-colors">Opowiedz o projekcie</label>
+                    <textarea rows="3" placeholder="Z czym masz problem? Co chcesz osiągnąć?" class="bg-transparent border-b-2 border-white/20 py-4 text-xl md:text-2xl text-white placeholder-gray-700 focus:outline-none focus:border-[#ccff00] transition-colors resize-none rounded-none w-full"></textarea>
+                </div>
+
+                <div class="md:col-span-2 mt-8">
+                    <button type="button" class="w-full bg-[#ccff00] text-black font-black text-2xl md:text-3xl uppercase py-6 hover:bg-white hover:scale-[1.02] transition-all duration-300 flex justify-center items-center gap-4 border-2 border-transparent">
+                        Wyślij Wiadomość <i data-lucide="send" class="w-8 h-8"></i>
+                    </button>
+                </div>
+            </form>
+
+            <div class="mt-32 w-full flex flex-col md:flex-row justify-between items-center gap-8 border-t border-white/20 pt-8 font-mono text-xs md:text-sm uppercase text-gray-500">
+                <p>© 2026 DESIGN DEV STUDIO. WSZELKIE PRAWA ZASTRZEŻONE.</p>
+                <div class="flex gap-6 md:gap-8">
+                    <a href="#" class="hover:text-[#ccff00] transition-colors">Instagram</a>
+                    <a href="#" class="hover:text-[#ccff00] transition-colors">Awwwards</a>
+                    <a href="#" class="hover:text-[#ccff00] transition-colors">GitHub</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Skrypty JS - Logika i animacje z Reacta zamienione na Vanilla JS -->
+    <script>
+        // Inicjalizacja ikon Lucide
+        lucide.createIcons();
+
+        // Obsługa własnego kursora
+        const cursorOutline = document.getElementById('cursor-outline');
+        const cursorDot = document.getElementById('cursor-dot');
+
+        window.addEventListener('mousemove', (e) => {
+            // Animujemy kursor tylko na desktopach (powyżej 768px szerokości)
+            if(window.innerWidth >= 768) {
+                cursorOutline.style.transform = `translate(${e.clientX - 16}px, ${e.clientY - 16}px)`;
+                cursorDot.style.transform = `translate(${e.clientX - 4}px, ${e.clientY - 4}px)`;
+            }
+        });
+
+        // Obsługa menu podczas scrollowania
+        const navbar = document.getElementById('navbar');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-[#050505]/90', 'backdrop-blur-md', 'border-b', 'border-white/10', 'py-4');
+                navbar.classList.remove('bg-transparent', 'py-8');
+            } else {
+                navbar.classList.remove('bg-[#050505]/90', 'backdrop-blur-md', 'border-b', 'border-white/10', 'py-4');
+                navbar.classList.add('bg-transparent', 'py-8');
+            }
+        });
+
+        // Obsługa menu mobilnego
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        let isMenuOpen = false;
+
+        const toggleMenu = () => {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('hidden');
+                mobileMenu.classList.add('flex');
+                menuIcon.setAttribute('data-lucide', 'x');
+            } else {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+                menuIcon.setAttribute('data-lucide', 'menu');
+            }
+            lucide.createIcons(); // Przeładowanie ikon po zmianie atrybutu
+        };
+
+        mobileMenuBtn.addEventListener('click', toggleMenu);
+
+        // Zamykanie menu po kliknięciu w link na telefonie
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if(isMenuOpen) toggleMenu();
+            });
+        });
+    </script>
+</body>
+</html>
