@@ -1,130 +1,3 @@
-
-
-<!DOCTYPE html> <html lang="pl"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Creative Developer | Portfolio</title> <!-- Tailwind CSS CDN --> <script src="https://cdn.tailwindcss.com"></script> <!-- Lucide Icon
-
-pasted
-
-to moaj strona chce ja ulepszyc
-
-19:37
-
-Oczekiwano na wiadomość użytkownika
-Oczekiwano na wiadomość użytkownika
-Fajna strona! Widzę solidną bazę — brutalistyczny design z neonową żółcią wygląda profesjonalnie. Co chciałbyś poprawić?
-
-Wybierz co Cię interesuje, a zabieram się do roboty! 🚀
-
-Q: Co chcesz ulepszyć? (Select all that apply)
-A: Animacje i efekty wizualne, Sekcja z projektami / portfolio
-
-Q: Jaki priorytet?
-A: Efekt WOW (animacje, 3D)
-
-19:37
-
-Zaplanował imponujące animacje i efekty 3D dla portfolio
-Zaplanował imponujące animacje i efekty 3D dla portfolio
-Dobra, czas na poważny upgrade! Dodam:
-
-Glitch efekt na hero tekście
-Canvas particles w tle hero
-Scroll-triggered animacje na każdą sekcję
-3D tilt karty w portfolio z hover efektem
-Magnetic buttons i wzmocniony kursor
-Nową sekcję Portfolio z projektami
-
-Created a file, read a file
-Created a file, read a file
-Gotowe! Oto co dodałem i zmieniłem:
-
-🎨 Animacje i WOW efekty:
-
-Glitch efekt — hero tekst losowo się "psuje" z kolorowymi smugami (co 6s)
-Canvas particles — siatka cząsteczek w tle hero, która reaguje na ruch myszki
-Scroll reveal — każda sekcja wsuwa się z dołu/boku podczas scrollowania
-Animowany kursor — płynny pierścień z lagiem, który rozszerza się na hover
-Liczniki — cyfry animują się kiedy wchodzisz w widok (40+ projektów, 98% itp.)
-Pasek postępu — zielona linia u góry pokazuje postęp scrollowania
-🃏 Nowa sekcja Portfolio:
-
-Duża karta featured projektu + siatka 3 mniejszych kart
-3D tilt efekt — karty "przechylają się" w 3D podczas ruchu myszki
-Shine efekt — świetlny odblask podąża za kursorem na karcie
-Tagi technologii (React, Node.js, WooCommerce)
-✨ Inne usprawnienia:
-
-Bebas Neue jako font display — mocniejsza typografia
-Sekcja umiejętności z animowanymi paskami
-Trzecia karta w "Podejście" (Szybkość i Niezawodność)
-Magnetic button na przycisku CTA
-Portfolio
-Code · HTML 
-trzeba zawrzec i wypromowac ze tworze aplikacje backendowe takie jakei potrzebuje ktos trzeba to fajnei zaznaczyc
-
-19:44
-
-Thought for 1s
-Thought for 1s
-Rozumiem — backend to często niedoceniany, ale bardzo wartościowy serwis. Dodam go mocno w kilku miejscach: jako osobną usługę w liście, w marquee, w portfolio i z fajnym tech-stackiem. Zaraz aktualizuję plik.
-
-
-Przygotował sekcje do promocji aplikacji backendowych
-Przygotował sekcje do promocji aplikacji backendowych
-Teraz dodaję projekt backendowy do sekcji portfolio:
-
-
-Edited a file, read a file
-Edited a file, read a file
-Backend teraz bije w oczy w kilku miejscach jednocześnie:
-
-Co zostało dodane:
-
-W sekcji Usługi — wiersz nr 04 "Aplikacje Backendowe" z zielonym akcentem, badge'em "Nowość" i tagami technologii (Node.js, Python, PostgreSQL, REST API). Na hover podświetla się mocniej niż pozostałe.
-
-Dedykowana sekcja "Silnik, który napędza Twoją aplikację" — między usługami a portfolio:
-
-Po lewej terminal mockup z kolorowym syntax highlighting i migającym kursorem
-Po prawej lista checkboxów z konkretnymi przypadkami użycia: REST API, bazy danych, integracje zewnętrzne (Stripe, SMS), automatyzacja, uprawnienia
-Przycisk CTA "Potrzebuję backendu" prowadzący do formularza
-W Portfolio — duża karta "PayFlow — Backend API" z animowanym logiem requestów (GET, POST, PUT, DELETE, 200/201), metrykami uptime i req/s
-
-W marquee — dodane: APLIKACJE BACKENDOWE • REST API • BAZY DANYCH
-
-Portfolio
-Code · HTML 
-czy strona jest w pelni rwd
-
-19:49
-
-Viewed 2 files
-Viewed 2 files
-Przejrzałem cały kod — znalazłem kilka realnych problemów na mobile. Naprawiam je wszystkie:
-
-
-Edited 9 files, read a file
-Edited 9 files, read a file
-Nie była w pełni RWD — znalazłem i naprawiłem 6 konkretnych problemów:
-
-Problem	Fix
-cursor: none na całym body	Działa teraz tylko na desktopie (hover: hover and pointer: fine)
-Kursor ring/dot widoczny na mobile	Ukryty CSS-em na urządzeniach dotykowych
-Karta featured w portfolio miała min-h-[420px] — zdjęcie znikało na mobile	Explicit min-height: 260px na panelu graficznym
-Terminal w sekcji Backend mógł wylewać kod poza ekran	overflow-x-auto + mniejszy font na mobile
-3D tilt kart i magnetic buttons działały na dotyku (niepotrzebnie)	Wyłączone na touch devices przez matchMedia
-Statystyki hero — tekst "Zadowolonych" wychodził poza kolumnę	Skrócone etykiety + mniejszy font na mobile
-Portfolio
-Code · HTML 
-
-
-You are out of free messages until 12:00 AM
-Upgrade
-
-
-
-Claude is AI and can make mistakes. Please double-check responses.
-Portfolio · HTML
-Copy
-
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -141,9 +14,9 @@ Copy
             --dark: #050505;
             --light: #EAEAEA;
         }
- 
+
         html { scroll-behavior: smooth; }
- 
+
         body {
             background: var(--dark);
             color: var(--light);
@@ -153,13 +26,13 @@ Copy
         @media (hover: hover) and (pointer: fine) {
             body { cursor: none; }
         }
- 
+
         /* ===== SCROLLBAR ===== */
         ::-webkit-scrollbar { width: 5px; }
         ::-webkit-scrollbar-track { background: var(--dark); }
         ::-webkit-scrollbar-thumb { background: #222; }
         ::-webkit-scrollbar-thumb:hover { background: var(--lime); }
- 
+
         /* ===== CURSOR ===== */
         #cursor-ring, #cursor-dot { display: none; }
         @media (hover: hover) and (pointer: fine) {
@@ -191,7 +64,7 @@ Copy
                 background: rgba(204,255,0,0.1);
             }
         }
- 
+
         /* ===== CANVAS ===== */
         #hero-canvas {
             position: absolute;
@@ -199,7 +72,7 @@ Copy
             z-index: 0;
             opacity: 0.5;
         }
- 
+
         /* ===== MARQUEE ===== */
         @keyframes marquee {
             0% { transform: translateX(0); }
@@ -210,7 +83,7 @@ Copy
             display: flex;
             white-space: nowrap;
         }
- 
+
         /* ===== GLITCH ===== */
         @keyframes glitch1 {
             0%, 90%, 100% { clip-path: inset(0 0 100% 0); transform: translate(0); }
@@ -250,7 +123,7 @@ Copy
             color: #00ffff;
             animation: glitch2 6s infinite;
         }
- 
+
         /* ===== STROKE TEXT ===== */
         .stroke-text {
             -webkit-text-stroke: 2px var(--light);
@@ -260,7 +133,7 @@ Copy
             -webkit-text-stroke: 2px var(--lime);
             color: transparent;
         }
- 
+
         /* ===== SCROLL REVEAL ===== */
         .reveal {
             opacity: 0;
@@ -294,7 +167,7 @@ Copy
         .delay-300 { transition-delay: 0.3s; }
         .delay-400 { transition-delay: 0.4s; }
         .delay-500 { transition-delay: 0.5s; }
- 
+
         /* ===== PAGE LOAD ===== */
         @keyframes fadeUp {
             from { opacity: 0; transform: translateY(40px); }
@@ -307,7 +180,7 @@ Copy
         .hero-animate-2 { animation-delay: 0.3s; }
         .hero-animate-3 { animation-delay: 0.5s; }
         .hero-animate-4 { animation-delay: 0.7s; }
- 
+
         /* ===== PORTFOLIO CARDS ===== */
         .tilt-card {
             transform-style: preserve-3d;
@@ -343,7 +216,7 @@ Copy
             letter-spacing: 0.15em;
             text-transform: uppercase;
         }
- 
+
         /* ===== COUNTER ANIMATION ===== */
         .stat-number {
             font-size: clamp(3rem, 8vw, 6rem);
@@ -351,7 +224,7 @@ Copy
             letter-spacing: -0.02em;
             color: var(--lime);
         }
- 
+
         /* ===== PROGRESS BARS ===== */
         .skill-bar {
             height: 2px;
@@ -370,7 +243,7 @@ Copy
         .skill-bar-fill.animate {
             width: var(--target-width);
         }
- 
+
         /* ===== SERVICE ROWS ===== */
         .service-row {
             transition: background 0.4s, padding 0.4s;
@@ -378,12 +251,12 @@ Copy
         .service-row:hover {
             background: var(--lime);
         }
- 
+
         /* ===== MAGNETIC BTN ===== */
         .magnetic-btn {
             transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
- 
+
         /* ===== NAV ===== */
         #navbar {
             transition: all 0.4s ease;
@@ -395,7 +268,7 @@ Copy
             padding-top: 1rem;
             padding-bottom: 1rem;
         }
- 
+
         /* ===== NOISE OVERLAY ===== */
         body::after {
             content: '';
@@ -406,7 +279,7 @@ Copy
             pointer-events: none;
             z-index: 9998;
         }
- 
+
         /* ===== SCROLLING PROGRESS ===== */
         #scroll-progress {
             position: fixed;
@@ -417,20 +290,20 @@ Copy
             width: 0%;
             transition: width 0.1s linear;
         }
- 
+
         /* ===== SELECTION ===== */
         ::selection { background: var(--lime); color: black; }
     </style>
 </head>
 <body>
- 
+
 <!-- Scroll progress bar -->
 <div id="scroll-progress"></div>
- 
+
 <!-- Custom Cursor -->
 <div id="cursor-ring"></div>
 <div id="cursor-dot"></div>
- 
+
 <!-- ===== NAVBAR ===== -->
 <nav id="navbar" class="fixed w-full z-50 py-8 px-6 md:px-12 flex justify-between items-center">
     <div class="font-black tracking-tighter uppercase flex items-center gap-2" style="font-family:'Bebas Neue',cursive; font-size: clamp(1.4rem, 4vw, 1.8rem); letter-spacing:0.05em;">
@@ -455,26 +328,26 @@ Copy
         <button id="close-menu" class="absolute top-8 right-8 text-white hover:text-[#ccff00]"><i data-lucide="x" class="w-8 h-8"></i></button>
     </div>
 </nav>
- 
+
 <main>
- 
+
 <!-- ===== HERO ===== -->
 <section class="relative min-h-screen flex flex-col justify-center overflow-hidden pt-24">
     <canvas id="hero-canvas"></canvas>
- 
+
     <div class="container mx-auto px-6 md:px-12 relative z-10">
- 
+
         <p class="hero-animate hero-animate-1 text-[#ccff00] text-xs md:text-sm mb-8 uppercase tracking-[0.3em] flex items-center gap-4">
             <span class="w-10 h-px bg-[#ccff00]"></span>
             Design &amp; Technologia dla Biznesu
             <span class="w-10 h-px bg-[#ccff00]"></span>
         </p>
- 
+
         <h1 class="hero-animate hero-animate-2 leading-[0.85] font-black uppercase tracking-tighter mb-12 flex flex-col" style="font-family:'Bebas Neue',cursive; font-size: clamp(4rem, 14vw, 13rem);">
             <span class="glitch-wrap hover:text-[#ccff00] transition-colors duration-500 cursor-default" data-text="Creative">Creative</span>
             <span class="stroke-text ml-0 md:ml-[8vw] hover:text-[#ccff00] transition-colors duration-500 cursor-default glitch-wrap" data-text="Developer.">Developer.</span>
         </h1>
- 
+
         <div class="hero-animate hero-animate-3 flex flex-col md:flex-row justify-between items-start md:items-end gap-12">
             <p class="text-lg md:text-2xl max-w-xl font-light leading-relaxed" style="font-family:sans-serif;">
                 Pomagam firmom rosnąć w internecie.<br/>
@@ -487,7 +360,7 @@ Copy
                 </div>
             </a>
         </div>
- 
+
         <!-- Stats row -->
         <div class="hero-animate hero-animate-4 grid grid-cols-3 gap-2 md:gap-4 mt-16 md:mt-24 pt-8 md:pt-12 border-t border-white/10">
             <div>
@@ -504,14 +377,14 @@ Copy
             </div>
         </div>
     </div>
- 
+
     <!-- Scroll indicator -->
     <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40 animate-bounce">
         <p class="text-[0.6rem] uppercase tracking-[0.3em]">Scroll</p>
         <i data-lucide="chevron-down" class="w-4 h-4 text-[#ccff00]"></i>
     </div>
 </section>
- 
+
 <!-- ===== MARQUEE ===== -->
 <div class="w-full bg-[#ccff00] text-black py-4 md:py-5 overflow-hidden flex border-y-2 border-black">
     <div class="animate-marquee text-3xl md:text-4xl font-black uppercase tracking-widest" style="font-family:'Bebas Neue',cursive; letter-spacing:0.08em;">
@@ -519,7 +392,7 @@ Copy
         STRONY WWW &nbsp;•&nbsp; SKLEPY INTERNETOWE &nbsp;•&nbsp; APLIKACJE BACKENDOWE &nbsp;•&nbsp; REST API &nbsp;•&nbsp; SYSTEMY DLA FIRM &nbsp;•&nbsp; AUTOMATYZACJA PRACY &nbsp;•&nbsp; BAZY DANYCH &nbsp;•&nbsp; WIZERUNEK MARKI &nbsp;•&nbsp;
     </div>
 </div>
- 
+
 <!-- ===== SERVICES ===== -->
 <section id="uslugi" class="py-32 container mx-auto px-6 md:px-12">
     <div class="reveal mb-16">
@@ -528,7 +401,7 @@ Copy
             Co <span class="text-[#ccff00]">tworzę?</span>
         </h2>
     </div>
- 
+
     <div class="border-t-2 border-white/10">
         <div class="service-row group border-b-2 border-white/10 py-10 md:py-16 flex flex-col md:flex-row md:items-center justify-between gap-8 md:px-8 -mx-6 px-6 md:mx-0 cursor-pointer reveal delay-100">
             <div class="flex items-start gap-6 md:w-2/3">
@@ -544,7 +417,7 @@ Copy
                 <i data-lucide="arrow-right" class="hidden md:block mt-6 w-10 h-10 text-transparent group-hover:text-black transition-all -translate-x-8 group-hover:translate-x-0 opacity-0 group-hover:opacity-100"></i>
             </div>
         </div>
- 
+
         <div class="service-row group border-b-2 border-white/10 py-10 md:py-16 flex flex-col md:flex-row md:items-center justify-between gap-8 md:px-8 -mx-6 px-6 md:mx-0 cursor-pointer reveal delay-200">
             <div class="flex items-start gap-6 md:w-2/3">
                 <span class="text-lg md:text-3xl font-mono text-white/20 group-hover:text-black/40 transition-colors pt-1">02</span>
@@ -559,7 +432,7 @@ Copy
                 <i data-lucide="arrow-right" class="hidden md:block mt-6 w-10 h-10 text-transparent group-hover:text-black transition-all -translate-x-8 group-hover:translate-x-0 opacity-0 group-hover:opacity-100"></i>
             </div>
         </div>
- 
+
         <div class="service-row group border-b-2 border-white/10 py-10 md:py-16 flex flex-col md:flex-row md:items-center justify-between gap-8 md:px-8 -mx-6 px-6 md:mx-0 cursor-pointer reveal delay-300">
             <div class="flex items-start gap-6 md:w-2/3">
                 <span class="text-lg md:text-3xl font-mono text-white/20 group-hover:text-black/40 transition-colors pt-1">03</span>
@@ -574,7 +447,7 @@ Copy
                 <i data-lucide="arrow-right" class="hidden md:block mt-6 w-10 h-10 text-transparent group-hover:text-black transition-all -translate-x-8 group-hover:translate-x-0 opacity-0 group-hover:opacity-100"></i>
             </div>
         </div>
- 
+
         <!-- BACKEND – wyróżniony wiersz -->
         <div class="service-row group border-b-2 border-[#ccff00]/30 py-10 md:py-16 flex flex-col md:flex-row md:items-center justify-between gap-8 md:px-8 -mx-6 px-6 md:mx-0 cursor-pointer reveal delay-400 relative overflow-hidden" style="background: rgba(204,255,0,0.04);">
             <!-- Subtle glow background -->
@@ -606,7 +479,7 @@ Copy
         </div>
     </div>
 </section>
- 
+
 <!-- ===== BACKEND SPOTLIGHT ===== -->
 <section class="py-24 overflow-hidden" style="background: #0a0a0a; border-top: 1px solid rgba(204,255,0,0.1); border-bottom: 1px solid rgba(204,255,0,0.1);">
     <div class="container mx-auto px-6 md:px-12">
@@ -638,7 +511,7 @@ Copy
                     </div>
                 </div>
             </div>
- 
+
             <!-- Right: copy -->
             <div class="reveal-right">
                 <p class="text-xs text-[#ccff00] uppercase tracking-[0.3em] mb-4">— Backend &amp; API</p>
@@ -648,7 +521,7 @@ Copy
                 <p class="text-gray-400 leading-relaxed mb-8" style="font-family:sans-serif; font-size:1rem;">
                     Frontend to tylko to, co widać. Prawdziwa magia dzieje się z tyłu — tam, gdzie dane są przetwarzane, logika biznesowa żyje, a systemy rozmawiają ze sobą. Tworzę backendy skrojone na miarę: bezpieczne, skalowalne i szybkie.
                 </p>
- 
+
                 <!-- Feature checklist -->
                 <ul class="space-y-4 mb-10">
                     <li class="flex items-start gap-3 text-sm" style="font-family:sans-serif;">
@@ -672,7 +545,7 @@ Copy
                         <span><strong class="text-white">Uwierzytelnianie i uprawnienia</strong> — JWT, OAuth, role użytkowników z pełną granulacją</span>
                     </li>
                 </ul>
- 
+
                 <a href="#kontakt" class="magnetic-btn inline-flex items-center gap-3 bg-[#ccff00] text-black font-black text-sm uppercase tracking-widest px-8 py-4 hover:bg-white transition-colors" style="font-family:'Space Mono',monospace;">
                     Potrzebuję backendu <i data-lucide="arrow-right" class="w-4 h-4"></i>
                 </a>
@@ -683,7 +556,7 @@ Copy
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
     </style>
 </section>
- 
+
 <!-- ===== PORTFOLIO ===== -->
 <section id="portfolio" class="py-32 overflow-hidden">
     <div class="container mx-auto px-6 md:px-12">
@@ -698,7 +571,7 @@ Copy
                 Wszystkie realizacje <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </a>
         </div>
- 
+
         <!-- Featured project -->
         <div class="tilt-card reveal mb-6 bg-[#0e0e0e] border border-white/5 group cursor-pointer">
             <div class="card-shine"></div>
@@ -754,7 +627,7 @@ Copy
                 </div>
             </div>
         </div>
- 
+
         <!-- Small cards grid -->
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- Card 1 -->
@@ -789,7 +662,7 @@ Copy
                     </div>
                 </div>
             </div>
- 
+
             <!-- Card 2 -->
             <div class="tilt-card reveal delay-200 bg-[#ccff00] group cursor-pointer">
                 <div class="card-shine"></div>
@@ -815,7 +688,7 @@ Copy
                     </div>
                 </div>
             </div>
- 
+
             <!-- Card 3 -->
             <div class="tilt-card reveal delay-300 bg-[#0e0e0e] border border-white/5 group cursor-pointer md:col-span-2 lg:col-span-1">
                 <div class="card-shine"></div>
@@ -846,7 +719,7 @@ Copy
                     </div>
                 </div>
             </div>
- 
+
             <!-- Card 4: Backend API -->
             <div class="tilt-card reveal delay-400 group cursor-pointer md:col-span-2 lg:col-span-3" style="background: #0a0a0a; border: 1px solid rgba(204,255,0,0.2);">
                 <div class="card-shine"></div>
@@ -895,7 +768,7 @@ Copy
         </div>
     </div>
 </section>
- 
+
 <!-- ===== SKILLS / APPROACH ===== -->
 <section id="podejscie" class="py-32 bg-white text-black overflow-hidden">
     <div class="container mx-auto px-6 md:px-12">
@@ -908,7 +781,7 @@ Copy
                 <p class="text-lg md:text-xl font-light leading-relaxed text-gray-600 mb-10" style="font-family:sans-serif;">
                     Gotowe programy zmuszają Cię do dostosowania się do nich. Ja tworzę systemy, które dostosowują się do Ciebie.
                 </p>
- 
+
                 <!-- Skill bars -->
                 <div class="space-y-6">
                     <div>
@@ -937,7 +810,7 @@ Copy
                     </div>
                 </div>
             </div>
- 
+
             <div class="reveal-right grid grid-cols-1 sm:grid-cols-2 gap-6 content-start">
                 <div class="bg-[#f0f0f0] p-8 md:p-10 hover:scale-[1.03] transition-transform duration-300">
                     <i data-lucide="database" class="w-10 h-10 mb-6 text-[#050505]"></i>
@@ -958,7 +831,7 @@ Copy
         </div>
     </div>
 </section>
- 
+
 <!-- ===== CONTACT ===== -->
 <section id="kontakt" class="pt-40 pb-20 container mx-auto px-6 md:px-12">
     <div class="text-center mb-16 reveal">
@@ -967,7 +840,7 @@ Copy
             Let's Talk
         </h2>
     </div>
- 
+
     <form class="max-w-4xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 reveal delay-200">
         <div class="flex flex-col gap-2 group">
             <label class="font-mono text-xs uppercase tracking-[0.2em] text-gray-500 group-focus-within:text-[#ccff00] transition-colors">Jak się nazywasz?</label>
@@ -997,7 +870,7 @@ Copy
             </button>
         </div>
     </form>
- 
+
     <div class="mt-32 w-full flex flex-col md:flex-row justify-between items-center gap-8 border-t border-white/10 pt-8 font-mono text-xs uppercase text-gray-600">
         <p>© 2026 DESIGN DEV STUDIO. WSZELKIE PRAWA ZASTRZEŻONE.</p>
         <div class="flex gap-6 md:gap-8">
@@ -1007,12 +880,12 @@ Copy
         </div>
     </div>
 </section>
- 
+
 </main>
- 
+
 <script>
 lucide.createIcons();
- 
+
 // ===== CURSOR =====
 const ring = document.getElementById('cursor-ring');
 const dot = document.getElementById('cursor-dot');
@@ -1033,20 +906,20 @@ if (isDesktop) {
     }
     animateCursor();
 }
- 
+
 // ===== SCROLL PROGRESS =====
 const sp = document.getElementById('scroll-progress');
 window.addEventListener('scroll', () => {
     const scrolled = window.scrollY / (document.body.scrollHeight - window.innerHeight);
     sp.style.width = (scrolled * 100) + '%';
 });
- 
+
 // ===== NAVBAR SCROLL =====
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 60);
 });
- 
+
 // ===== MOBILE MENU =====
 const mobileMenuBtn = document.getElementById('mobile-menu-btn');
 const mobileMenu = document.getElementById('mobile-menu');
@@ -1060,19 +933,19 @@ const toggleMenu = () => {
 mobileMenuBtn.addEventListener('click', toggleMenu);
 if (closeMenu) closeMenu.addEventListener('click', toggleMenu);
 document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', () => { if(isOpen) toggleMenu(); }));
- 
+
 // ===== HERO CANVAS PARTICLES =====
 const canvas = document.getElementById('hero-canvas');
 const ctx = canvas.getContext('2d');
 let W, H, particles = [];
- 
+
 function resize() {
     W = canvas.width = canvas.offsetWidth;
     H = canvas.height = canvas.offsetHeight;
 }
 resize();
 window.addEventListener('resize', () => { resize(); initParticles(); });
- 
+
 function initParticles() {
     particles = [];
     const count = Math.floor((W * H) / 12000);
@@ -1088,14 +961,14 @@ function initParticles() {
     }
 }
 initParticles();
- 
+
 let mouseX = W / 2, mouseY = H / 2;
 canvas.addEventListener('mousemove', e => {
     const rect = canvas.getBoundingClientRect();
     mouseX = e.clientX - rect.left;
     mouseY = e.clientY - rect.top;
 });
- 
+
 function drawParticles() {
     ctx.clearRect(0, 0, W, H);
     particles.forEach(p => {
@@ -1110,13 +983,13 @@ function drawParticles() {
         p.x += p.vx; p.y += p.vy;
         if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
         if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
- 
+
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(204,255,0,${p.alpha})`;
         ctx.fill();
     });
- 
+
     // Draw connections
     for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
@@ -1136,7 +1009,7 @@ function drawParticles() {
     requestAnimationFrame(drawParticles);
 }
 drawParticles();
- 
+
 // ===== SCROLL REVEAL =====
 const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
 const revObs = new IntersectionObserver((entries) => {
@@ -1147,7 +1020,7 @@ const revObs = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
 revealEls.forEach(el => revObs.observe(el));
- 
+
 // ===== COUNTER ANIMATION =====
 const counters = document.querySelectorAll('.stat-number[data-target]');
 const counterObs = new IntersectionObserver((entries) => {
@@ -1168,7 +1041,7 @@ const counterObs = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.5 });
 counters.forEach(c => counterObs.observe(c));
- 
+
 // ===== SKILL BARS =====
 const skillBars = document.querySelectorAll('.skill-bar-fill');
 const skillObs = new IntersectionObserver((entries) => {
@@ -1180,7 +1053,7 @@ const skillObs = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.5 });
 skillBars.forEach(b => skillObs.observe(b));
- 
+
 // ===== 3D TILT CARDS (only desktop) =====
 if (isDesktop) {
 document.querySelectorAll('.tilt-card').forEach(card => {
@@ -1208,7 +1081,7 @@ document.querySelectorAll('.tilt-card').forEach(card => {
         card.style.transition = 'transform 0.1s ease';
     });
 });
- 
+
 // ===== MAGNETIC BUTTONS (only desktop) =====
 document.querySelectorAll('.magnetic-btn').forEach(btn => {
     btn.addEventListener('mousemove', e => {
@@ -1225,4 +1098,3 @@ document.querySelectorAll('.magnetic-btn').forEach(btn => {
 </script>
 </body>
 </html>
- 
